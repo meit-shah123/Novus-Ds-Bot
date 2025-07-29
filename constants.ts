@@ -25,6 +25,7 @@ Link: https://www.figma.com/design/cjM14Nqi5ewHwIvbssheQK/Novus---Components-1?n
 Menu: https://www.figma.com/design/cjM14Nqi5ewHwIvbssheQK/Novus---Components-1?node-id=9884-149235
 Modal: https://www.figma.com/design/cjM14Nqi5ewHwIvbssheQK/Novus---Components-1?node-id=9352-121702
 Notification Banner: https://www.figma.com/design/cjM14Nqi5ewHwIvbssheQK/Novus---Components-1?node-id=17856-77143
+Notification Toast: https://www.figma.com/design/cjM14Nqi5ewHwIvbssheQK/Novus---Components-1?m=auto&node-id=39052-50230&t=PTsHsp3dOZ8uNdrc-1
 Pagination: https://www.figma.com/design/cjM14Nqi5ewHwIvbssheQK/Novus---Components-1?node-id=629-158025
 Popover: https://www.figma.com/design/cjM14Nqi5ewHwIvbssheQK/Novus---Components-1?node-id=28608-50092
 Progress Bar: https://www.figma.com/design/cjM14Nqi5ewHwIvbssheQK/Novus---Components-1?node-id=18221-13552
@@ -34,6 +35,8 @@ Scrollbar: https://www.figma.com/design/cjM14Nqi5ewHwIvbssheQK/Novus---Component
 Search: https://www.figma.com/design/cjM14Nqi5ewHwIvbssheQK/Novus---Components-1?node-id=9932-334396
 Multi Select: https://www.figma.com/design/cjM14Nqi5ewHwIvbssheQK/Novus---Components-1?node-id=49301-29028
 Selector Dropdown: https://www.figma.com/design/cjM14Nqi5ewHwIvbssheQK/Novus---Components-1?node-id=19798-280464
+Single Select: https://www.figma.com/design/cjM14Nqi5ewHwIvbssheQK/Novus---Components-1?node-id=49264-32760&t=TzgLZMMC9sjXn9RR-11
+Multi Select: https://www.figma.com/design/cjM14Nqi5ewHwIvbssheQK/Novus---Components-1?node-id=49301-29028&t=TzgLZMMC9sjXn9RR-11
 Slider: https://www.figma.com/design/cjM14Nqi5ewHwIvbssheQK/Novus---Components-1?node-id=39325-8581
 Spinner: https://www.figma.com/design/cjM14Nqi5ewHwIvbssheQK/Novus---Components-1?node-id=5274-70519
 Swipe Button: https://www.figma.com/design/cjM14Nqi5ewHwIvbssheQK/Novus---Components-1?node-id=21055-4349
