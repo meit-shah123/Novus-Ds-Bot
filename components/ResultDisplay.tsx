@@ -135,7 +135,7 @@ export const ResultDisplay: React.FC<ResultDisplayProps> = ({ response, isLoadin
                                 id="component-correction"
                                 value={selectedComponent}
                                 onChange={(e) => setSelectedComponent(e.target.value)}
-                                className="w-full appearance-none rounded-md border border-slate-600 bg-slate-900 py-3 pl-4 pr-10 text-white transition focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                className="w-full appearance-none rounded-lg border border-slate-600 bg-slate-900 py-3 pl-4 pr-10 text-white transition focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             >
                                 {componentNames.map(name => (
                                     <option key={name} value={name}>{name}</option>
@@ -155,7 +155,7 @@ export const ResultDisplay: React.FC<ResultDisplayProps> = ({ response, isLoadin
                                     type="text"
                                     value={otherComponentName}
                                     onChange={(e) => setOtherComponentName(e.target.value)}
-                                    className="w-full p-2 bg-slate-900 border border-slate-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                                    className="w-full p-2 bg-slate-900 border border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
                                     placeholder="Enter new component name"
                                     required
                                 />
@@ -163,11 +163,11 @@ export const ResultDisplay: React.FC<ResultDisplayProps> = ({ response, isLoadin
                         )}
                         <div className="mt-3 flex gap-2 justify-end">
                             {!forceShowCorrection && (
-                                <button type="button" onClick={() => setShowCorrectionForm(false)} className="px-3 py-1.5 text-sm font-medium text-slate-300 rounded-md hover:bg-slate-700 transition-colors">
+                                <button type="button" onClick={() => setShowCorrectionForm(false)} className="px-3 py-1.5 text-sm font-medium text-slate-300 rounded-full hover:bg-slate-700 transition-colors">
                                     Cancel
                                 </button>
                             )}
-                            <button type="submit" className="px-3 py-1.5 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-500 transition-colors">
+                            <button type="submit" className="px-3 py-1.5 text-sm font-medium text-white bg-indigo-600 rounded-full hover:bg-indigo-500 transition-colors">
                                 Submit Correction
                             </button>
                         </div>
