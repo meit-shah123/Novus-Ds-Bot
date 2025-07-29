@@ -1,3 +1,4 @@
+
 import React, { useState, useCallback, useMemo } from 'react';
 import { ImageUploader } from './components/ImageUploader';
 import { ResultDisplay } from './components/ResultDisplay';
@@ -123,7 +124,7 @@ export default function App(): React.ReactNode {
             <header className="w-full max-w-5xl mx-auto mb-6 text-center">
                 <div className="flex items-center justify-center gap-3 mb-2">
                     <LogoIcon />
-                    <h1 className="text-3xl sm:text-4xl font-bold text-slate-50 tracking-tight">Novus component Assistant</h1>
+                    <h1 className="text-3xl sm:text-4xl font-bold text-slate-50 tracking-tight">Novus Component Assistant</h1>
                 </div>
                 <p className="text-slate-400 text-lg">Upload a component screenshot to identify it in the Novus Design System.</p>
             </header>
@@ -153,7 +154,7 @@ export default function App(): React.ReactNode {
                         <button
                             onClick={handleAnalyze}
                             disabled={!imageFile || isLoading}
-                            className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-500 disabled:bg-slate-600 disabled:cursor-not-allowed disabled:opacity-70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-indigo-500 transition-all duration-200"
+                            className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-full shadow-md hover:bg-indigo-500 disabled:bg-slate-600 disabled:cursor-not-allowed disabled:opacity-70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-indigo-500 transition-all duration-200"
                         >
                             {isLoading ? (
                                 <>
