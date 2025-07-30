@@ -1,12 +1,15 @@
 
 import React, { useState, useEffect } from 'react';
-import { LinkIcon } from './icons';
+import { LinkIcon, FullScreenIcon } from './icons';
+import { ComponentInfo } from '../constants';
+import { FullScreenPreview } from './FullScreenPreview';
 
 interface ResultDisplayProps {
     response: string | null;
     isLoading: boolean;
     error: string | null;
     componentNames: string[];
+    componentData: ComponentInfo[];
     onCorrectionSubmit: (correctComponentName: string) => void;
     correctionSubmitted: boolean;
     forceShowCorrection?: boolean;
@@ -16,13 +19,15 @@ const SkeletonLoader: React.FC = () => (
     <div className="space-y-4 animate-pulse">
         <div className="h-4 bg-slate-700 rounded w-1/3"></div>
         <div className="h-4 bg-slate-700 rounded w-3/4"></div>
+        <div className="h-24 bg-slate-700 rounded w-full mt-4"></div>
     </div>
 );
 
-export const ResultDisplay: React.FC<ResultDisplayProps> = ({ response, isLoading, error, componentNames, onCorrectionSubmit, correctionSubmitted, forceShowCorrection = false }) => {
+export const ResultDisplay: React.FC<ResultDisplayProps> = ({ response, isLoading, error, componentNames, componentData, onCorrectionSubmit, correctionSubmitted, forceShowCorrection = false }) => {
     const [showCorrectionForm, setShowCorrectionForm] = useState(false);
     const [selectedComponent, setSelectedComponent] = useState('');
     const [otherComponentName, setOtherComponentName] = useState('');
+    const [fullScreenImageUrl, setFullScreenImageUrl] = useState<string | null>(null);
 
     const parseResponse = () => {
         if (!response) return null;
@@ -36,6 +41,8 @@ export const ResultDisplay: React.FC<ResultDisplayProps> = ({ response, isLoadin
         return { noMatch: response };
     };
     const parsedData = parseResponse();
+    const componentInfo = parsedData?.componentName ? componentData.find(c => c.name === parsedData.componentName) : null;
+
 
     useEffect(() => {
         if (forceShowCorrection) {
@@ -92,6 +99,21 @@ export const ResultDisplay: React.FC<ResultDisplayProps> = ({ response, isLoadin
 
         return (
             <div className="space-y-4">
+                {componentInfo?.previewUrl && (
+                    <div className="mb-4">
+                        <h3 className="text-sm font-medium text-slate-400 mb-2">Component Preview</h3>
+                        <div className="relative bg-slate-800 p-4 rounded-lg border border-slate-700 flex justify-center items-center">
+                            <img src={componentInfo.previewUrl} alt={`${componentInfo.name} preview`} className="max-w-full max-h-48 object-contain rounded-md" />
+                            <button
+                                onClick={() => setFullScreenImageUrl(componentInfo.previewUrl)}
+                                className="absolute top-2 right-2 p-1.5 bg-slate-900/50 backdrop-blur-sm rounded-full text-slate-300 hover:bg-slate-700/80 hover:text-white transition-all duration-300"
+                                aria-label="View fullscreen"
+                            >
+                                <FullScreenIcon />
+                            </button>
+                        </div>
+                    </div>
+                )}
                 <div>
                     <h3 className="text-sm font-medium text-slate-400">Matched Component</h3>
                     <p className="text-lg font-semibold text-slate-50">{parsedData.componentName}</p>
@@ -163,11 +185,11 @@ export const ResultDisplay: React.FC<ResultDisplayProps> = ({ response, isLoadin
                         )}
                         <div className="mt-3 flex gap-2 justify-end">
                             {!forceShowCorrection && (
-                                <button type="button" onClick={() => setShowCorrectionForm(false)} className="px-3 py-1.5 text-sm font-medium text-slate-300 rounded-full hover:bg-slate-700 transition-colors">
+                                <button type="button" onClick={() => setShowCorrectionForm(false)} className="px-3 py-1.5 text-sm font-medium text-slate-300 rounded-lg hover:bg-slate-700 transition-colors">
                                     Cancel
                                 </button>
                             )}
-                            <button type="submit" className="px-3 py-1.5 text-sm font-medium text-white bg-indigo-600 rounded-full hover:bg-indigo-500 transition-colors">
+                            <button type="submit" className="px-3 py-1.5 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-500 transition-colors">
                                 Submit Correction
                             </button>
                         </div>
@@ -189,6 +211,12 @@ export const ResultDisplay: React.FC<ResultDisplayProps> = ({ response, isLoadin
                 {renderMainContent()}
            </div>
            {renderCorrectionSection()}
+           {fullScreenImageUrl && (
+                <FullScreenPreview 
+                    imageUrl={fullScreenImageUrl}
+                    onClose={() => setFullScreenImageUrl(null)}
+                />
+            )}
         </div>
     );
 };

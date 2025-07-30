@@ -4,7 +4,7 @@ import { ImageUploader } from './components/ImageUploader';
 import { ResultDisplay } from './components/ResultDisplay';
 import { identifyComponent } from './services/geminiService';
 import { LogoIcon } from './components/icons';
-import { COMPONENT_LIST } from './constants';
+import { COMPONENT_DATA } from './constants';
 import { addCorrection } from './services/correctionService';
 
 // Helper to convert file to base64
@@ -17,16 +17,6 @@ const fileToBase64 = (file: File): Promise<string> => {
     });
 };
 
-// Helper to parse component names from the constant list
-const parseComponentNames = (list: string): string[] => {
-    return list
-        .trim()
-        .split('\n')
-        .map(line => line.split(':')[0].trim())
-        .filter(name => name);
-};
-
-
 export default function App(): React.ReactNode {
     const [imageFile, setImageFile] = useState<File | null>(null);
     const [imagePreview, setImagePreview] = useState<string | null>(null);
@@ -38,7 +28,7 @@ export default function App(): React.ReactNode {
     const [correctionSubmitted, setCorrectionSubmitted] = useState(false);
     const [isOtherFlow, setIsOtherFlow] = useState(false);
 
-    const componentNames = useMemo(() => parseComponentNames(COMPONENT_LIST), []);
+    const componentNames = useMemo(() => COMPONENT_DATA.map(c => c.name), []);
     const componentNamesWithOther = useMemo(() => [...componentNames, 'Other'], [componentNames]);
 
     const handleImageUpload = useCallback((file: File) => {
@@ -176,6 +166,7 @@ export default function App(): React.ReactNode {
                             isLoading={isLoading}
                             error={error}
                             componentNames={componentNamesWithOther}
+                            componentData={COMPONENT_DATA}
                             onCorrectionSubmit={handleCorrectionSubmit}
                             correctionSubmitted={correctionSubmitted}
                             forceShowCorrection={isOtherFlow}
