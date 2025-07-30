@@ -6,7 +6,7 @@ export interface ComponentInfo {
 }
 
 export const COMPONENT_DATA: ComponentInfo[] = [
-  { name: 'Avatar', url: 'https://www.figma.com/design/cjM14Nqi5ewHwIvbssheQK/Novus---Components-1?node-id=43197-4112', previewUrl: null },
+  { name: 'Avatar', url: 'https://www.figma.com/design/cjM14Nqi5ewHwIvbssheQK/Novus---Components-1?node-id=43197-4112', previewUrl: 'https://raw.githubusercontent.com/Chaitu-ikrr/Novus-Ds-Bot/main/Assets/Avatar.png' },
   { name: 'Accordion', url: 'https://www.figma.com/design/cjM14Nqi5ewHwIvbssheQK/Novus---Components-1?node-id=43215-76908', previewUrl: null },
   { name: 'Badge', url: 'https://www.figma.com/design/cjM14Nqi5ewHwIvbssheQK/Novus---Components-1?node-id=43215-99021', previewUrl: null },
   { name: 'Bottom Sheet', url: 'https://www.figma.com/design/cjM14Nqi5ewHwIvbssheQK/Novus---Components-1?node-id=43266-55270', previewUrl: null },
