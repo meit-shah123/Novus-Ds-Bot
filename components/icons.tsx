@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export const UploadIcon: React.FC = () => (
@@ -24,5 +23,11 @@ export const LogoIcon: React.FC = () => (
         <path d="M12 2L2 7l10 5 10-5-10-5z" fill="currentColor" opacity="0.6"/>
         <path d="M2 17l10 5 10-5" fill="currentColor" opacity="0.6"/>
         <path d="M2 12l10 5 10-5" fill="currentColor"/>
+    </svg>
+);
+
+export const FullScreenIcon: React.FC = () => (
+    <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
     </svg>
 );
