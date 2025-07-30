@@ -1,5 +1,5 @@
 {
-  "name": "Design System Component Identifier",
+  "name": "Novus Component Assisant",
   "description": "An intelligent assistant to help designers identify UI components from screenshots by comparing them against the Novus Design System.",
   "requestFramePermissions": [],
   "prompt": ""
