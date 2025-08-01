@@ -115,6 +115,7 @@ export default function App(): React.ReactNode {
                 <div className="flex items-center justify-center gap-3 mb-2">
                     <LogoIcon />
                     <h1 className="text-3xl sm:text-4xl font-bold text-slate-50 tracking-tight">Novus Component Assistant</h1>
+                    <span className="self-center bg-teal-400/10 text-teal-400 text-sm font-medium px-3 py-1 rounded-full ring-1 ring-inset ring-teal-400/20">Beta</span>
                 </div>
                 <p className="text-slate-400 text-lg">Upload a component screenshot to identify it in the Novus Design System.</p>
             </header>
